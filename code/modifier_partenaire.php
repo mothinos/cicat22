@@ -19,7 +19,7 @@ admin_only(); ?>
 			<p><textarea type="text" name="competences"><?= $donnees["competences"];?></textarea></p>
 			<p><textarea type="text" name="secteur" ><?= $donnees["secteur"];?></textarea></p>
 			<p><input type="text" name="site" value='<?= $donnees["site"];?>'></p>
-			<p><form method="post" action="traitement/traitement.php" ><!-- envoi de l'id dans le post --><input type="hidden" name='id' value="<?php echo $donnees['id_partenaire'];?>"/><input type="hidden" name='traitement' value="update_partenaire"/><input type="submit" name="update" value="modifier"/></form></p>
+			<p><!-- <form method="post" action="traitement/traitement.php" > --><!-- envoi de l'id dans le post --><input type="hidden" name='id' value="<?php echo $donnees['id_partenaire'];?>"/><input type="hidden" name='traitement' value="update_partenaire"/><input type="submit" name="update" value="modifier"/><!-- </form> --></p>
 		</form>
 
 		<?php 

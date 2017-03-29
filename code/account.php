@@ -18,13 +18,17 @@ require 'inc/header.php';
 ?>
 
 <h1>Bonjour <?= $_SESSION['auth']->username; ?></h1>
-<h2>status <?= $_SESSION['auth']->status; ?></h2>
-<?php if($_SESSION['auth']->status=='root'){
+<h2>status <?= $_SESSION['status']; ?></h2>
+<?php if($_SESSION['status']=='root'){
 	echo 'root';
-}elseif($_SESSION['auth']->status=='admin'){
+}elseif($_SESSION['status']=='admin'){
 	echo 'admin';
-}else{
+}elseif($_SESSION['status']=='basic'){
 	echo 'basic';
+}elseif($_SESSION['status']=='lambda'){
+	echo 'lambda';
+}else{
+	header('location : index.php');
 }
 ?>
 

@@ -138,15 +138,46 @@
 
             header('location: ../admin_partenaire.php');/*redirection vers page des evenements*/     
 
-        }else{
-         header('location: ../index.php');
-     }
+        }elseif($_POST['traitement']=='update_user'){
 //******************************************************************************************************
 //
 //
-//                                         traitement 
+//                                         traitement update user
 //
 //
 //******************************************************************************************************
 
+echo "ça c'est update_user";
+        var_dump($_POST);
+        print_r($_POST);
+        include '../inc/connectbdd.php';
+            $req = $pdo->prepare("UPDATE users SET username= ? , email= ?, status= ? WHERE id = ".$_POST['id']."");//prépare l'envois vers la BDD
+            var_dump($_POST);
+            $req->execute(array( $_POST['username'], $_POST['email'], $_POST['status']))/*envois vers BDD*/ ?> 
+            <p><?php echo 'je crois que ça a fait quelque chose!' ?></p>
+
+            <?php header('location: ../admin_users.php');/*redirection vers page des evenements*/
+
+//******************************************************************************************************
+//
+//
+//                                         traitement delete user
+//
+//
+//******************************************************************************************************
+
+        }elseif($_POST['traitement']=='delete_user'){
+            echo "ça c'est delete_user";
+            var_dump($_POST); 
+
+
+           include '../inc/connectbdd.php';
+            $req = $pdo->prepare("DELETE FROM users WHERE id = ?");//prépare l'envois vers la BDD
+            print_r($_POST);
+            $req->execute(array($_POST['id']));/*envois vers BDD*/ 
+
+            header('location: ../admin_users.php');/*redirection vers page des evenements*/
+}else{
+         header('location: ../index.php');
+     }
 ?>

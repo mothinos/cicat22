@@ -13,13 +13,15 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
 	$req = $pdo->prepare('SELECT * FROM users WHERE (username = :username OR email = :username) AND confirmed_at IS NOT NULL');
 	$req->execute(['username'=> $_POST['username']]);
 	$user = $req->fetchobject(
-		//PDO::FETCH_LAZY
 		);
 
 	if ($user) {
 		if(password_verify($_POST['password'], $user->password)){
 
 			$_SESSION['auth'] = $user;
+//////////////////////////
+			$_SESSION['status']=$user->status;
+///////////////////////////
 			$_SESSION['flash']['success'] = 'Vous êtes maintenant connecté';
 			if($_POST['remember']){
 				$remember_token = str_random(250); 
@@ -37,6 +39,7 @@ if(!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])){
 	}
 	
 }
+
 ?>
 
 

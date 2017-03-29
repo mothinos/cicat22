@@ -3,9 +3,9 @@
 
 </header>
 
-<h2>status <?= $_SESSION['auth']->status; ?></h2>
+<!-- <h2>status <?= $_SESSION['auth']->status; ?></h2>
 <?php
-var_dump($_SESSION);
+//var_dump($_SESSION);
 
  if($_SESSION['auth']->status=='root'){
 	echo 'root';
@@ -17,7 +17,7 @@ var_dump($_SESSION);
 }elseif($_SESSION['auth']->status=='basic'){
 	echo 'basic';
 }
-?>
+?> -->
 
 
 </body>

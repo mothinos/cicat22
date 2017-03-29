@@ -38,9 +38,9 @@ function reconnect_from_cookie(){
 		$user_id = $parts[0];
 		$req = $pdo->prepare('SELECT * FROM users WHERE id = ?');
 		$req->execute([$user_id]);
-		var_dump($user_id);
+		//var_dump($user_id);
 		$user = $req->fetchobject();
-		var_dump($user);
+		//var_dump($user);
 
 		if($user){
 			$expected = $user_id . '//' . $user->remember_token . sha1($user_id . 'ratonlaveurs');
@@ -60,9 +60,9 @@ function reconnect_from_cookie(){
 }
 
 function admin_only(){
-	if(($_SESSION['auth']->status=='root') || ($_SESSION['auth']->status=='admin')){
+	if(($_SESSION['status']=='root') || ($_SESSION['status']=='admin')){
 		
-	}elseif($_SESSION['auth']->status=='basic'){
+	}elseif($_SESSION['status']=='basic'){
 		$_SESSION['flash']['danger'] = "Vous n'avez pas le droit d'accéder à cette page";
 		header('Location: index.php');
 		exit();
@@ -70,13 +70,13 @@ function admin_only(){
 }
 
 function root_only(){
-	if(!$_SESSION['auth']){
+	if(!$_SESSION['status']){
 		$_SESSION['flash']['danger'] = "Vous n'avez pas le droit d'accéder à cette page";
 		header('Location: http://localhost/Dropbox/cicat/code/index.php');
 		exit();
-	}elseif($_SESSION['auth']->status=='root'){
+	}elseif($_SESSION['status']=='root'){
 		
-	}elseif(($_SESSION['auth']->status=='basic') || ($_SESSION['auth']->status=='admin')){
+	}elseif(($_SESSION['status']=='basic') || ($_SESSION['status']=='admin')){
 		$_SESSION['flash']['danger'] = "Vous n'avez pas le droit d'accéder à cette page";
 		header('Location: http://localhost/Dropbox/cicat/code/index.php');
 		exit();

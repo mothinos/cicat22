@@ -9,7 +9,7 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 		<th>description</th>
 		<th>lieu</th>
 		<th>affiche</th>
-		<?php if(($_SESSION['auth']->status=='root') || ($_SESSION['auth']->status=='admin')){
+		<?php if(($_SESSION['status']=='root') || ($_SESSION['status']=='admin')){
 			echo '<th>modifier</th>
 			<th>supprimer</th>';
 		}
@@ -29,7 +29,7 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 				<td><?php echo $donnees['lieu'];?></td>
 				<td><?= $donnees['event_img'];?></td>
 				<!-- bouton modifier -->		
-				<?php if(($_SESSION['auth']->status=='root') || ($_SESSION['auth']->status=='admin')){ ?>
+				<?php if(($_SESSION['status']=='root') || ($_SESSION['status']=='admin')){ ?>
 
 				<td>
 					<form method="post" action="modifier_evenement.php" ><!-- envoi de l'id dans le post -->
@@ -102,13 +102,15 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 	?>
 </table>
 <?php
-}elseif((pagencours =="/Dropbox/cicat/code/admin_users.php") && ($_SESSION['auth']->status=='root')){
+}elseif((pagencours =="/Dropbox/cicat/code/admin_users.php") && ($_SESSION['status']=='root')){
 
 	?>
 	<table>
 		<th>username</th>
 		<th>email</th>
 		<th>status</th>
+		<th>modifier</th>
+		<th>supprimer</th>
 		
 		<?php require 'inc/connectbdd.php';
 
@@ -129,7 +131,7 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 			<td>
 				<form method="post" action="traitement/traitement.php"><!-- envoi de l'id dans le post -->
 					<input type="hidden" name='id' value="<?php echo $donnees['id'];?>"/>
-					<input type="hidden" name='traitement' value="delete_partenaire"/>
+					<input type="hidden" name='traitement' value="delete_user"/>
 					<input type="submit" name="delete" value="Supprimer" />
 				</form>
 			</td>

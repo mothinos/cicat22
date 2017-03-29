@@ -18,7 +18,7 @@ admin_only();?>
 			<p><input type="date" name="date" value='<?= $donnees["date"];?>'/></p>
 			<p><textarea type="text" name="description" ><?= $donnees["description"];?></textarea></p>
 			<p><input type="text" name="lieu" value='<?= $donnees["lieu"];?>'></p>
-			<p><form method="post" action="updateevent.php" ><!-- envoi de l'id dans le post --><input type="hidden" name='id' value="<?php echo $donnees['id_event'];?>"/><input type="hidden" name='traitement' value="update_event"/><input type="submit" name="update" value="modifier"/></form></p>
+			<p><!-- <form method="post" action="updateevent.php" > --><!-- envoi de l'id dans le post --><input type="hidden" name='id' value="<?php echo $donnees['id_event'];?>"/><input type="hidden" name='traitement' value="update_event"/><input type="submit" name="update" value="modifier"/><!-- </form> --></p>
 		</form>
 
 		<?php 

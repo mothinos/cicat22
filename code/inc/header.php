@@ -1,10 +1,11 @@
 <?php 
 if(session_status() == PHP_SESSION_NONE){
 	session_start();
-	 if(!isset($_SESSION['auth']->status)){
-		$_SESSION['auth']->status = 'lambda';
+
 }
-}
+if(!isset($_SESSION['status'])){
+		$_SESSION['status']='lambda';
+	}
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +40,8 @@ if(session_status() == PHP_SESSION_NONE){
 				<a class="navbar-brand" href="http://localhost/Dropbox/cicat/code/index.php">cicat.22</a>
 			</div>
 			<!-- test  -->
-			<?php if(isset($_SESSION['auth'])){
-				if(($_SESSION['auth']->status=='admin') || ($_SESSION['auth']->status=='root')){
+			<?php 
+				if(($_SESSION['status']=='admin') || ($_SESSION['status']=='root')){
 					?>
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -50,7 +51,7 @@ if(session_status() == PHP_SESSION_NONE){
 					</div>
 
 					<?php }
-				} ?>
+				 ?>
 				<!-- fin du test -->
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
@@ -121,4 +122,9 @@ if(session_status() == PHP_SESSION_NONE){
 		</ul>
 	</div>
 </div>
+<?php 
+echo 'status';
+var_dump($_SESSION['status']);
+echo 'status';
+?>
 
