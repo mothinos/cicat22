@@ -1,0 +1,550 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"id_eve",
+				"id_event"
+			],
+			[
+				"id",
+				"id_event"
+			],
+			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"modi",
+				"modifier_evenement"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"l",
+				"li\tTag"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"di",
+				"div\tTag"
+			],
+			[
+				"sess",
+				"session_start"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"h",
+				"html\thtml"
+			],
+			[
+				"for",
+				"form\tTag"
+			],
+			[
+				"va",
+				"validator"
+			],
+			[
+				"rand",
+				"random"
+			],
+			[
+				"rememe",
+				"remember"
+			],
+			[
+				"fe",
+				"fetch"
+			],
+			[
+				"quer",
+				"query"
+			],
+			[
+				"se",
+				"session"
+			],
+			[
+				"sta",
+				"static"
+			],
+			[
+				"restric",
+				"restriction_msg"
+			],
+			[
+				"_s",
+				"_SESSION"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"error",
+				"errors"
+			],
+			[
+				"f",
+				"field"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"pu",
+				"public"
+			],
+			[
+				"user",
+				"username"
+			],
+			[
+				"vali",
+				"validator"
+			],
+			[
+				"pr",
+				"private"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"Data",
+				"database"
+			],
+			[
+				"re",
+				"require"
+			],
+			[
+				"ex",
+				"expected"
+			],
+			[
+				"remember",
+				"remember_token"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"reset",
+				"reset_at"
+			],
+			[
+				"exe",
+				"execute"
+			],
+			[
+				"a",
+				"action\tAttr"
+			],
+			[
+				"fo",
+				"form\tTag"
+			],
+			[
+				"req",
+				"require"
+			],
+			[
+				"session",
+				"session_start"
+			],
+			[
+				"sessio",
+				"session_destroy"
+			],
+			[
+				"to",
+				"token"
+			],
+			[
+				"er",
+				"error"
+			],
+			[
+				"fil",
+				"filter_var"
+			],
+			[
+				"pre",
+				"preg_match"
+			],
+			[
+				"p",
+				"php"
+			],
+			[
+				"border-c",
+				"border-collapse"
+			],
+			[
+				"sele",
+				"SELECT"
+			],
+			[
+				"s",
+				"script\tTag"
+			],
+			[
+				"b",
+				"button\tTag"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"m",
+				"meta\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 185.0,
+		"last_filter": "Package Control: in",
+		"selected_items":
+		[
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 725.0
+	},
+	"console":
+	{
+		"height": 144.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/wamp64/www/Dropbox",
+		"/C/wamp64/www/Dropbox/cicat",
+		"/C/wamp64/www/Dropbox/cicat/code"
+	],
+	"file_history":
+	[
+		"/C/wamp64/www/Dropbox/cicat/code/index.php",
+		"/C/wamp64/www/Dropbox/cicat/code/inc/link.php",
+		"/C/wamp64/www/Dropbox/cicat/code/inc/login.php",
+		"/C/wamp64/www/Dropbox/cicat/code/inc/header.php",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/wamp64/www/index.php",
+		"/C/wamp64/www/add_vhost.php",
+		"/C/wamp64/www/Dropbox/vrac/heure.php",
+		"/C/wamp64/www/Dropbox/code/test bootstrap/index.html",
+		"/C/Users/inconnu/Desktop/style.css",
+		"/C/Users/inconnu/Desktop/quentin.html",
+		"/C/wamp64/www/Dropbox/ecf/BorneInLamballev4.sql",
+		"/C/Users/inconnu/Desktop/index.php",
+		"/C/Users/inconnu/AppData/Local/Temp/fz3temp-2/index.php",
+		"/C/wamp64/www/Dropbox/cicat/code/traitement/adorup.php",
+		"/C/wamp64/www/Dropbox/cicat/code/inc/connectbdd.php",
+		"/C/wamp64/www/Dropbox/cicat/code/inc/session.php",
+		"/C/wamp64/www/Dropbox/cicat/code/poubelle/code à réutiliser .php",
+		"/C/wamp64/www/Dropbox/cicat/code/supprimer_evenement.php",
+		"/C/wamp64/www/Dropbox/cicat/code/adminevent.php",
+		"/C/wamp64/www/Dropbox/cicat/code/testadminevent.php",
+		"/C/wamp64/www/Dropbox/cicat/code/evenement.php",
+		"/C/wamp64/www/Dropbox/cicat/code/traitement/addevent.php",
+		"/C/wamp64/www/Dropbox/cicat/code/traitement/ajout_evenement.php",
+		"/C/wamp64/www/Dropbox/cicat/code/ajout_evenement.php",
+		"/C/wamp64/www/Dropbox/cicat/code/traitement/updateevent.php",
+		"/C/wamp64/www/Dropbox/cicat/code/addevent.php",
+		"/C/wamp64/www/Dropbox/cicat/code/css/style.css",
+		"/C/wamp64/www/Dropbox/ecf/BorneInLamballe.sql",
+		"/C/wamp64/www/Dropbox/Stage/code/contact.php",
+		"/C/wamp64/www/Dropbox/Stage/code/inc/link.php",
+		"/C/wamp64/www/Dropbox/Stage/code/inc/header.php",
+		"/C/wamp64/www/php-training-mysql-master/js/script.js",
+		"/C/wamp64/www/php-training-mysql-master/css/basics.css",
+		"/C/wamp64/www/Stage/code/inc/login.php",
+		"/C/wamp64/www/Stage/code/index.php",
+		"/C/wamp64/www/Stage/code/admin.php",
+		"/C/wamp64/www/Stage/code/inc/connectbdd.php",
+		"/C/wamp64/www/Stage/code/addevent.php",
+		"/C/wamp64/www/Stage/code/inc/header.php",
+		"/C/wamp64/www/Stage/code/evenement.php",
+		"/C/wamp64/www/training/traitementcreate.php",
+		"/C/wamp64/www/training/connect_sql.php",
+		"/C/wamp64/www/Stage/code/inc/deconnexion.php",
+		"/C/wamp64/www/Stage/code/inc/link.php",
+		"/C/wamp64/www/training/create.php",
+		"/C/wamp64/www/Stage/code/inc/admin.php",
+		"/C/wamp64/www/Stage/code/login.php",
+		"/C/wamp64/www/vrac/session.php",
+		"/C/wamp64/www/vrac/page.php",
+		"/C/wamp64/www/vrac/heure.php",
+		"/C/wamp64/www/vrac/index.php",
+		"/C/wamp64/www/log/account.php",
+		"/C/wamp64/www/log/class/Auth.php",
+		"/C/wamp64/www/log/class/Validator.php",
+		"/C/wamp64/www/log/reset.php",
+		"/C/wamp64/www/log/login.php",
+		"/C/wamp64/www/log/inc/header.php",
+		"/C/wamp64/www/log/unregister.php",
+		"/C/wamp64/www/test_sockets.php",
+		"/C/wamp64/www/log/forget.php",
+		"/C/wamp64/www/log/logout.php",
+		"/C/wamp64/www/log/class/Session.php",
+		"/C/wamp64/www/log/inc/functions.php",
+		"/C/wamp64/www/log/class/app.php",
+		"/C/wamp64/www/log/register.php",
+		"/C/wamp64/www/log/confirm.php",
+		"/C/wamp64/www/log/class/str.php",
+		"/C/wamp64/www/Stage/code/aide.php",
+		"/C/wamp64/www/log/class/string.php",
+		"/C/wamp64/www/logprocedural/login.php",
+		"/C/wamp64/www/log/inc/db.php",
+		"/C/wamp64/www/log/class/database.php",
+		"/C/wamp64/www/log/inc/bootstrap.php",
+		"/C/wamp64/www/log/css/app.css",
+		"/C/wamp64/bin/apache/apache2.4.23/bin/php.ini",
+		"/C/wamp64/www/log/class/Database.php",
+		"/C/wamp64/www/log/inc/footer.php",
+		"/C/Users/inconnu/Desktop/DATAFPA/index.html",
+		"/C/wamp64/www/log/res",
+		"/C/wamp64/www/php-training-mysql-master/read.php",
+		"/C/wamp64/www/php-training-mysql-master/ids.php",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/slider/bootstrap/js/jquery.js",
+		"/C/wamp64/www/training/traitement.php",
+		"/C/wamp64/www/training/css/basics.css",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/indexpouranimate.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/colone secteur.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/index.html",
+		"/C/Users/inconnu/AppData/Roaming/Sublime Text 3/Packages/User/PHP.sublime-settings",
+		"/C/wamp64/www/training/read.php",
+		"/C/wamp64/www/php-training-mysql-de10f3cfd9c802afc8038afdc679adfd8531c8ad/read.php",
+		"/E/textvieaucentre.html",
+		"/E/test du jour/testslider.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/indexpouranimate.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/vu/secteur handicap.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/pie moin de 26.html",
+		"/E/test du jour/secteur RSA.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/pageI--contratpro.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/slider/JS/camera.js",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/slider/indexslide.htm",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/index.php",
+		"/E/test du jour/secteur zoom moins de 26.html",
+		"/C/Users/inconnu/Downloads/Camera-master/README.md",
+		"/C/Users/inconnu/Downloads/Camera-master/demo/basic.htm",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/index3.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/parallaxnouvellesformations.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/parallaxnouvellesformations.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/vu/listeformation.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/secteur handicap.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/secteur RSA.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/index2.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/Clean/CSS/styles.css",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/Taux de retour à l'emploi secteur Terciaire.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/test.js",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/testcontratpro.html",
+		"/C/Users/inconnu/AppData/Roaming/Sublime Text 3/Packages/Alignment/Default (Windows).sublime-keymap",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/index.html",
+		"/C/Users/inconnu/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/inconnu/AppData/Roaming/Sublime Text 3/Packages/Alignment/Base File.sublime-settings",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/secteur handicap.html",
+		"/C/Users/inconnu/AppData/Roaming/Sublime Text 3/Packages/ColorPicker/ColorPicker.sublime-settings",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/outil/Chart.js-2.4.0/samples/bar/bar.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/testage.html",
+		"/C/Users/inconnu/Documents/code/testchartdatafpa/test du jour/indexqui fonctionne pas.html"
+	],
+	"find":
+	{
+		"height": 43.0
+	},
+	"find_in_files":
+	{
+		"height": 117.0,
+		"where_history":
+		[
+			"C:\\wamp64\\www"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"connect",
+			"sak",
+			"sakila",
+			"border",
+			"td",
+			"\t\t\t\n",
+			"mail",
+			"){",
+			"Admin",
+			"preg_match",
+			"();\n",
+			"php",
+			"<li>",
+			" \n",
+			"amp",
+			"container",
+			"context"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\wamp64\\www"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 347.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
