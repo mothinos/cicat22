@@ -1,11 +1,14 @@
-<?php 
+<?php
 if(session_status() == PHP_SESSION_NONE){
 	session_start();
 
 }
-if(!isset($_SESSION['status'])){
-		$_SESSION['status']='lambda';
-	}
+
+require_once 'c:\wamp64\www\Dropbox\cicat\code\inc\functions.php';
+status($_SESSION['status']);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +36,9 @@ if(!isset($_SESSION['status'])){
 
 	<nav class="navbar navbar-inverse">
 		<div class="container">
+		<div id="logo">
+				<a href="index.php" ><img src="images/logo.svg" alt="logo_cicat22" title="logo_cicat22"/></a>
+			</div>
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 					<span class="sr-only">Toggle navigation</span>
@@ -41,22 +47,29 @@ if(!isset($_SESSION['status'])){
 			</div>
 			<!-- test  -->
 			<?php 
-				if(($_SESSION['status']=='admin') || ($_SESSION['status']=='root')){
-					?>
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-							<span class="sr-only">Toggle navigation</span>
-						</button>
-						<a class="navbar-brand" href="http://localhost/Dropbox/cicat/code/admin.php">admin</a>
-					</div>
+			if(($_SESSION['status']=='admin') || ($_SESSION['status']=='root')){
+				?>
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+					</button>
+					<a class="navbar-brand" href="http://localhost/Dropbox/cicat/code/admin.php">admin</a>
 
-					<?php }
-				 ?>
+					
+				</div>
+
+
+				<?php }
+				?>
+				
+
 				<!-- fin du test -->
 				<div id="navbar" class="collapse navbar-collapse">
 					<ul class="nav navbar-nav">
 						<?php if(isset($_SESSION['auth'])): ?>
 							<li><a href="logout.php">Se déconnecter</a></li>
+							<li><a href="account.php"><?php echo $_SESSION['auth']->username; ?></a></li>
+							<li><a href="#"><?php echo $_SESSION['status']; ?></a></li>
 
 						<?php else: ?>
 							<li><a href="register.php">s'inscrire</a></li>
@@ -81,9 +94,7 @@ if(!isset($_SESSION['status'])){
 
 		<!-- navbar  -->
 		<div class="container">
-			<div id="logo">
-				<a href="index.php" ><img src="images/logo.svg" alt="logo_cicat22" title="logo_cicat22"/></a>
-			</div>
+			
 			<div>
 				<ul id="menu_deroulant">
 					<li><a href="evenement.php">événement</a>
@@ -123,8 +134,6 @@ if(!isset($_SESSION['status'])){
 	</div>
 </div>
 <?php 
-echo 'status';
-var_dump($_SESSION['status']);
-echo 'status';
+
 ?>
 

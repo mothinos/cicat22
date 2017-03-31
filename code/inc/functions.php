@@ -60,9 +60,10 @@ function reconnect_from_cookie(){
 }
 
 function admin_only(){
+	echo "status fonction admin_only : ".$_SESSION['status'];
 	if(($_SESSION['status']=='root') || ($_SESSION['status']=='admin')){
 		
-	}elseif($_SESSION['status']=='basic'){
+	}elseif($_SESSION['status']=='basic' || $_SESSION['status']=='lambda'){
 		$_SESSION['flash']['danger'] = "Vous n'avez pas le droit d'accéder à cette page";
 		header('Location: index.php');
 		exit();
@@ -80,5 +81,12 @@ function root_only(){
 		$_SESSION['flash']['danger'] = "Vous n'avez pas le droit d'accéder à cette page";
 		header('Location: http://localhost/Dropbox/cicat/code/index.php');
 		exit();
+	}
+}
+
+
+function status($status){
+	if(!isset($status)){
+		$_SESSION['status']='lambda';
 	}
 }

@@ -1,5 +1,4 @@
 <?php include "inc/header.php"; 
-require 'inc/functions.php';
 root_only();?>
 <h1>modifier user</h1>
 <h2>cette page sert au modifications de la bdd user</h2>
@@ -8,7 +7,7 @@ root_only();?>
 require 'inc/connectbdd.php'; 
 // va chercher les données de la bdd de la ligne selectionné par le bouton modifier
 $reponse = $pdo->query("SELECT * FROM users WHERE  id=".$_POST['id']."");
-var_dump($reponse);
+
 		$donnees= $reponse->fetch();// rempli le tableau $donnees des réponses
 		?>
 

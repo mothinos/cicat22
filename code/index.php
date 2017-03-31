@@ -3,21 +3,20 @@
 
 </header>
 
-<!-- <h2>status <?= $_SESSION['auth']->status; ?></h2>
+<h2>status <?= $_SESSION['status']; ?></h2>
 <?php
 //var_dump($_SESSION);
 
- if($_SESSION['auth']->status=='root'){
+ if($_SESSION['status']=='root'){
 	echo 'root';
-}elseif($_SESSION['auth']->status=='admin'){
+}elseif($_SESSION['status']=='admin'){
 	echo 'admin';
-	?>
-	<a href="admin.php"><button>admin</button></a>
-	<?php
-}elseif($_SESSION['auth']->status=='basic'){
+}elseif($_SESSION['status']=='basic'){
 	echo 'basic';
+}elseif($_SESSION['status']=='lambda'){
+	echo 'lambada';
 }
-?> -->
+?>
 
 
 </body>

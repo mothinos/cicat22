@@ -1,5 +1,4 @@
 <?php include "inc/header.php";
-require 'inc/functions.php';
 admin_only();
 ?>
 

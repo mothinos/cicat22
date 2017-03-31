@@ -6,15 +6,19 @@ if(isset($_GET['id']) && isset($_GET['token'])){
 	$req->execute([$_GET['id'],$_GET['token']]);
 	$user = $req->fetch();
 	if($user){
+		// var_dump($user['id']);
+		// exit;
 		if(!empty($_POST)){
 			if (!empty($_POST['password']) && $_POST['password'] == $_POST['password_confirm']){
 				$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-				$pdo->prepare('UPDATE users SET password = ?,reset_at = NULL, reset_token = NULL')->execute([$password]);
+				$pdo->prepare('UPDATE users SET password = ?,reset_at = NULL, reset_token = NULL WHERE id = {$user["id"]}')->execute([$password]);
 				session_start();
 				$_SESSION['flash']['success'] = 'Votre mot de passe a bien été modifié';
-				$_SESSION['auth']= $user;
-				header('Location: account.php');
-				exit();
+				$_SESSION['auth'] = $user;
+				$_SESSION['status']=$user['status'];
+				var_dump($user['status']);
+				//header('Location: account.php');
+				//exit();
 			}
 		}
 	}else{

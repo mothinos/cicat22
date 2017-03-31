@@ -1,6 +1,12 @@
 <?php
-
-
+//*****************************************************************
+//
+//
+//
+//							tableau des evenements
+//
+//
+//*****************************************************************
 if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/cicat/code/ajout_evenement.php" || pagencours =="/Dropbox/cicat/code/modifier_evenement.php" || pagencours =="/Dropbox/cicat/code/admin_event.php"){ 
 	?>
 	<table>
@@ -57,6 +63,14 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 	?>
 </table>
 <?php
+//*****************************************************************
+//
+//
+//
+//							tableau des partenaires
+//
+//
+//*****************************************************************
 }elseif(pagencours =="/Dropbox/cicat/code/partenaire.php" || pagencours =="/Dropbox/cicat/code/ajout_partenaire.php" || pagencours =="/Dropbox/cicat/code/modifier_partenaire.php" || pagencours =="/Dropbox/cicat/code/admin_partenaire.php"){
 
 	?>
@@ -65,10 +79,11 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 		<th>ce qu'ils font avec nous</th>
 		<th>ce qu'ils font au quotidien</th>
 		<th>site</th>
-		<th>modifier</th>
-		<th>supprimer</th>
-
-		<?php require 'inc/connectbdd.php';
+		<?php if(($_SESSION['status']=='root') || ($_SESSION['status']=='admin')){
+			echo '<th>modifier</th>
+			<th>supprimer</th>';
+		}
+		require 'inc/connectbdd.php';
 
 		$reponse = $pdo->query('SELECT * from partenaire ORDER BY nom_partenaire');
 

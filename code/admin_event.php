@@ -1,5 +1,4 @@
 <?php include "inc/header.php";
-require 'inc/functions.php';
 admin_only(); ?>
 	<h1>adminevent</h1>
 	<h2>cette page sert au modification de la bdd evenement</h2>
