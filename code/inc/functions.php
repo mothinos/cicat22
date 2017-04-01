@@ -90,3 +90,9 @@ function status($status){
 		$_SESSION['status']='lambda';
 	}
 }
+
+// function session($user){
+// 	if(isset($user)){
+
+// 	}
+//}

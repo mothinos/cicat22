@@ -4,8 +4,10 @@ if(isset($_GET['id']) && isset($_GET['token'])){
 	require 'inc/functions.php';
 	$req = $pdo->prepare('SELECT * FROM users WHERE id = ? AND reset_token = ? AND reset_token IS NOT NULL AND reset_at > DATE_SUB(NOW(), INTERVAL 30 MINUTE)');
 	$req->execute([$_GET['id'],$_GET['token']]);
-	$user = $req->fetch();
+	$user = $req->fetchobject();
+	//$user = $req->fetch();
 	if($user){
+
 		// var_dump($user['id']);
 		// exit;
 		if(!empty($_POST)){
@@ -15,10 +17,11 @@ if(isset($_GET['id']) && isset($_GET['token'])){
 				session_start();
 				$_SESSION['flash']['success'] = 'Votre mot de passe a bien été modifié';
 				$_SESSION['auth'] = $user;
-				$_SESSION['status']=$user['status'];
-				var_dump($user['status']);
-				//header('Location: account.php');
-				//exit();
+				//$_SESSION['status']=$user['status'];
+				$_SESSION['status']=$user->status;
+				//var_dump($user['status']);
+				header('Location: account.php');
+				exit();
 			}
 		}
 	}else{
