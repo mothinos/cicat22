@@ -6,8 +6,11 @@ if(session_status() == PHP_SESSION_NONE){
 
 require_once 'c:\wamp64\www\Dropbox\cicat\code\inc\functions.php';
 //fonction pour avoir le status
-$_SESSION['status'];
+
+if(!isset($_SESSION['status'])){
+	$_SESSION['status']=NULL;
 	status($_SESSION['status']);
+}
 	
 
 
