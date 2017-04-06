@@ -25,35 +25,35 @@ if(empty($_POST)){
 
 }else{
 //
-if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-	$errors['email'] = "votre email n'est pas valide";
-}else{
-	$req = $pdo->prepare('SELECT id FROM users WHERE email = ?');
-	$req -> execute([$_POST['email']]);
-	$user = $req->fetch();
-	if($user){
-		$errors['email'] = 'Cet email est déjà utilisé pour un autre compte';
+	if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
+		$errors['email'] = "votre email n'est pas valide";
+	}else{
+		$req = $pdo->prepare('SELECT id FROM users WHERE email = ?');
+		$req -> execute([$_POST['email']]);
+		$user = $req->fetch();
+		if($user){
+			$errors['email'] = 'Cet email est déjà utilisé pour un autre compte';
+		}
 	}
-}
 
-if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
-	$errors['password'] = "vous devez rentrer un mot de passe valide";
-}
+	if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
+		$errors['password'] = "vous devez rentrer un mot de passe valide";
+	}
 
-if(empty($errors)){
-
+	if(empty($errors)){
 
 
-	$req = $pdo->prepare("INSERT INTO users SET username = ?, password= ?, email = ?, confirmation_token = ?");
-	$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-	$token = str_random(60);
-	$req ->execute([strip_tags($_POST['username']), strip_tags($password), $_POST['email'], $token]);
-	$user_id = $pdo->lastInsertId();
-	mail($_POST['email'],'confirmation de votre compte',"Afin de valider votre compte merci de cliquer sur ce lien\n\n<a href='http://localhost/Dropbox/cicat/code/confirm.php?id={$user_id}&token={$token}' target='_blank'>cliquez ici</a> http://localhost/Dropbox/cicat/code/confirm.php?id={$user_id}&token={$token} ");
-	$_SESSION['flash']['success']='Un email de confirmation vous a été envoyé pour valider vote compte';
-	header('location: login.php');
-	exit();
-}
+
+		$req = $pdo->prepare("INSERT INTO users SET username = ?, password= ?, email = ?, confirmation_token = ?");
+		$password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+		$token = str_random(60);
+		$req ->execute([strip_tags($_POST['username']), strip_tags($password), $_POST['email'], $token]);
+		$user_id = $pdo->lastInsertId();
+		mail($_POST['email'],'confirmation de votre compte',"Afin de valider votre compte merci de cliquer sur ce lien\n\n<a href='http://localhost/Dropbox/cicat/code/confirm.php?id={$user_id}&token={$token}' target='_blank'>cliquez ici</a> http://localhost/Dropbox/cicat/code/confirm.php?id={$user_id}&token={$token} ");
+		$_SESSION['flash']['success']='Un email de confirmation vous a été envoyé pour valider vote compte';
+		header('location: login.php');
+		exit();
+	}
 }
 //debug($errors);
 ?>

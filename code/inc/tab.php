@@ -7,7 +7,8 @@
 //
 //
 //*****************************************************************
-if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/cicat/code/ajout_evenement.php" || pagencours =="/Dropbox/cicat/code/modifier_evenement.php" || pagencours =="/Dropbox/cicat/code/admin_event.php"){ 
+//echo pagencours;
+if(pagencours =="evenement.php" || pagencours =="ajout_evenement.php" || pagencours =="modifier_evenement.php" || pagencours =="admin_event.php"){ 
 	?>
 	<table>
 		<th>titre</th>
@@ -33,7 +34,7 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 				<td><?php echo $donnees['date'];?></td>
 				<td><?php echo $donnees['description'];?></td>
 				<td><?php echo $donnees['lieu'];?></td>
-				<td><?= $donnees['event_img'];?></td>
+				<td ><img style="width: 50px;" src="/upload/<?= $donnees['event_img']; ?>"/></td>
 				<!-- bouton modifier -->		
 				<?php if(($_SESSION['status']=='root') || ($_SESSION['status']=='admin')){ ?>
 
@@ -71,7 +72,7 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 //
 //
 //*****************************************************************
-}elseif(pagencours =="/Dropbox/cicat/code/partenaire.php" || pagencours =="/Dropbox/cicat/code/ajout_partenaire.php" || pagencours =="/Dropbox/cicat/code/modifier_partenaire.php" || pagencours =="/Dropbox/cicat/code/admin_partenaire.php"){
+}elseif(pagencours =="partenaire.php" || pagencours =="ajout_partenaire.php" || pagencours =="modifier_partenaire.php" || pagencours =="admin_partenaire.php"){
 
 	?>
 	<table>
@@ -117,7 +118,7 @@ if(pagencours =="/Dropbox/cicat/code/evenement.php" || pagencours =="/Dropbox/ci
 	?>
 </table>
 <?php
-}elseif((pagencours =="/Dropbox/cicat/code/admin_users.php") && ($_SESSION['status']=='root')){
+}elseif((pagencours =="admin_users.php") && ($_SESSION['status']=='root')){
 
 	?>
 	<table>

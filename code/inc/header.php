@@ -1,4 +1,5 @@
 <?php
+
 if(session_status() == PHP_SESSION_NONE){
 	session_start();
 
@@ -11,7 +12,7 @@ if(!isset($_SESSION['status'])){
 	$_SESSION['status']=NULL;
 	status($_SESSION['status']);
 }
-	
+
 
 
 
@@ -30,7 +31,9 @@ if(!isset($_SESSION['status'])){
 	<link rel="icon" href="images/favicon.ico">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
-	<?php define('pagencours', $_SERVER['PHP_SELF'], true); ?>
+	<?php
+$server = basename($_SERVER['PHP_SELF']);
+	define('pagencours', $server, true); ?>
 	<title><?= pagencours; ?></title>
 
 	<!-- Bootstrap core CSS -->
@@ -43,7 +46,7 @@ if(!isset($_SESSION['status'])){
 
 	<nav class="navbar navbar-inverse">
 		<div class="container">
-		<div id="logo">
+			<div id="logo">
 				<a href="index.php" ><img src="images/logo.svg" alt="logo_cicat22" title="logo_cicat22"/></a>
 			</div>
 			<div class="navbar-header">
@@ -140,7 +143,6 @@ if(!isset($_SESSION['status'])){
 		</ul>
 	</div>
 </div>
-<?php 
-
+<?php
 ?>
 

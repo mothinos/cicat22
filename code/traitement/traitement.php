@@ -1,17 +1,18 @@
     <!DOCTYPE html>
     <html>
     <head>
-    	<title>traitement</title>
+        <title>traitement</title>
     </head>
     <body>
-    	<?php 
-        echo "Variable POST : ";
-        var_dump($_POST);
-        echo "ça c'est le dollars files : \n";
+        <?php 
+        //echo "Variable POST : ";
+        //var_dump($_POST);
+        //echo "ça c'est le dollars files : \n";
         //print_r($_FILES['event_img']);?>
     </body>
     </html>
     <?php
+    session_start();
 //******************************************************************************************************
 //
 //
@@ -21,33 +22,64 @@
 //******************************************************************************************************
 
     if($_POST['traitement']=='add_event'){
-    	echo "ça c'est add_event";
-    	echo'<h1>page de traitement</h1>';
+        echo "ça c'est add_event";
+        echo'<h1>page de traitement</h1>';
+        //var_dump($_FILES['event_img']['error']);
+        if(!empty($_FILES)){
 
-    	include '../inc/connectbdd.php';
-    	$req = $pdo->prepare("INSERT INTO evenement set titre= ? , date= ?, description= ?, lieu= ?, event_img= ?");
-			//prépare l'envois vers la BDD
-    	$req->execute(array( $_POST['titre'], $_POST['date'], $_POST['description'], $_POST['lieu'], $_FILES['event_img']['name']))
-    	/*envois vers BDD*/ ?> 
-    	<p><?php echo 'je crois que ça a fonctionné' ?></p>
-        <?php if(!empty($_FILES)){
-            print_r($_FILES);
+
+        //création du nouveau nom de l'image
+            $random = rand(1,999);
+            $temp = $random.$_POST['titre'].$_FILES['event_img']['name'];
+            $new_name = str_replace(" ", "_", $temp);            
+            $img = $_FILES['event_img'];
+            
+
+            // $output = $img['tmp_name'];
+            // echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+
             require ("../inc/imgClass.php");
-            $img = $_FILES["event_img"];
+            //pour tester l'extention du fichier
             $ext = strtolower(substr($img['name'], -3));
             $allow_ext = array("jpg","png","gif");
             if(in_array($ext, $allow_ext)){
-                move_uploaded_file($img['tmp_name'], '../upload/'.$img['name']);
-                Img::creerMin( '../upload/'.$img['name'], '../upload/min', $img['name'],215,112);
+            //déplacement du fichier
+                move_uploaded_file($img['tmp_name'], '../upload/'.$new_name);
+            Img::creerMin( '../upload/'.$new_name, '../upload/min', $new_name,215,112);
+            //"min.{$new_name}"
+            //fin du déplacement de l'image
+            //traitement de l'evenement -> insertion dans la bdd
+                include '../inc/connectbdd.php';
+                $req = $pdo->prepare("INSERT INTO evenement set titre= ? , date= ?, description= ?, lieu= ?, event_img= ?");
+    //prépare l'envois vers la BDD
+                $req->execute(array( $_POST['titre'], $_POST['date'], $_POST['description'], $_POST['lieu'], $new_name))
+                // envois vers BDD
+                ?> 
+                <p><?php echo 'je crois que ça a fonctionné</p>';
+
             }else{
 
-                //cette variable ne repasse pas vers ajout_evenement.php
-                $erreur = "Votre fichier n'est pas une image.";
-                header('location: ../ajout_evenement.php');
+        //cette variable ne repasse pas vers ajout_evenement.php
+                $_SESSION['flash']['danger'] = "ce fichier n'est pas une image valide";
+                //header('location: ../ajout_evenement.php');
             }
-        } ?>
+        }elseif(empty($_FILES)){
+            $_SESSION['flash']['danger'] = "Vous n'avez pas selectionné d'image";
+            header('location: ../ajout_evenement.php');
+        }
 
-    	<?php //header('location: ../admin_event.php');/*redirection vers page des événements*/ 
+    //mise en commentaire des prochaines lignes 
+    //include '../inc/connectbdd.php';
+    //$req = $pdo->prepare("INSERT INTO evenement set titre= ? , date= ?, description= ?, lieu= ?, event_img= ?");
+//prépare l'envois vers la BDD
+    //$req->execute(array( $_POST['titre'], $_POST['date'], $_POST['description'], $_POST['lieu'], $img['name']))
+        /*envois vers BDD*/ ?> 
+        <p><?php// echo 'je crois que ça a fonctionné'; ?></p>
+
+
+        <?php
+        var_dump($img);
+        header('location: ../evenement.php');/*redirection vers page des événements*/ 
 
     }elseif($_POST['traitement']=='update_event'){
 //******************************************************************************************************
@@ -58,16 +90,44 @@
 //
 //******************************************************************************************************
 
-    	echo "ça c'est update_event";
-    	var_dump($_POST);
-    	print_r($_POST);
-    	include '../inc/connectbdd.php';
-			$req = $pdo->prepare("UPDATE evenement SET titre= ? , date= ?, description= ?, lieu= ? WHERE id_event = ".$_POST['id']."");//prépare l'envois vers la BDD
-			var_dump($_POST);
-			$req->execute(array( $_POST['titre'], $_POST['date'], $_POST['description'], $_POST['lieu']))/*envois vers BDD*/ ?> 
-			<p><?php echo 'je crois que ça a fait quelque chose!' ?></p>
+       echo "ça c'est update_event";
+       var_dump($_POST);
+       print_r($_POST);
+       include '../inc/connectbdd.php';
+       if(!empty($_FILES)){
 
-			<?php header('location: ../admin_event.php');/*redirection vers page des evenements*/
+        //création du nouveau nom de l'image
+        $random = rand(1,999);
+        $temp = $random.$_POST['titre'].$_FILES['event_img']['name'];
+        $new_name = str_replace(" ", "_", $temp);            
+        $img = $_FILES['event_img'];
+
+            // $output = $img['tmp_name'];
+            // echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+
+        require ("../inc/imgClass.php");
+            //pour tester l'extention du fichier
+        $ext = strtolower(substr($img['name'], -3));
+        $allow_ext = array("jpg","png","gif");
+        if(in_array($ext, $allow_ext)){
+            //déplacement du fichier
+            move_uploaded_file($img['tmp_name'], '../upload/'.$new_name);
+            //Img::creerMin( '../upload/'.$new_name, '../upload/min', $new_name,215,112);
+            //"min.{$new_name}"
+            //fin du déplacement de l'image
+            //traitement de l'evenement -> insertion dans la bdd
+            include '../inc/connectbdd.php';
+        $req = $pdo->prepare("UPDATE evenement SET titre= ? , date= ?, description= ?, lieu= ?, event_img= ? WHERE id_event = ".$_POST['id']."");//prépare l'envois vers la BDD
+        var_dump($_POST);
+        $req->execute(array( $_POST['titre'], $_POST['date'], $_POST['description'], $_POST['lieu'], $new_name));/*envois vers BDD*/ 
+    } 
+}
+?>
+
+
+<p><?php echo 'je crois que ça a fait quelque chose!' ?></p>
+
+<?php header('location: ../admin_event.php');/*redirection vers page des evenements*/
 
 //******************************************************************************************************
 //
@@ -77,17 +137,17 @@
 //
 //******************************************************************************************************
 
-		}elseif($_POST['traitement']=='delete_event'){
-			echo "ça c'est delete_event";
-			var_dump($_POST); 
+}elseif($_POST['traitement']=='delete_event'){
+    echo "ça c'est delete_event";
+    var_dump($_POST); 
 
 
-           include '../inc/connectbdd.php';
-			$req = $pdo->prepare("DELETE FROM evenement WHERE id_event = ?");//prépare l'envois vers la BDD
+    include '../inc/connectbdd.php';
+            $req = $pdo->prepare("DELETE FROM evenement WHERE id_event = ?");//prépare l'envois vers la BDD
             print_r($_POST);
             $req->execute(array($_POST['id']));/*envois vers BDD*/ 
 
-            header('location: ../admin_event.php');/*redirection vers page des evenements*/ 	
+            header('location: ../admin_event.php');/*redirection vers page des evenements*/     
 
         }elseif($_POST['traitement']=='add_partenaire'){
 //******************************************************************************************************
@@ -147,10 +207,10 @@
 //
 //******************************************************************************************************
 
-echo "ça c'est update_user";
-        var_dump($_POST);
-        print_r($_POST);
-        include '../inc/connectbdd.php';
+            echo "ça c'est update_user";
+            var_dump($_POST);
+            print_r($_POST);
+            include '../inc/connectbdd.php';
             $req = $pdo->prepare("UPDATE users SET username= ? , email= ?, status= ? WHERE id = ".$_POST['id']."");//prépare l'envois vers la BDD
             var_dump($_POST);
             $req->execute(array( $_POST['username'], $_POST['email'], $_POST['status']))/*envois vers BDD*/ ?> 
@@ -170,14 +230,13 @@ echo "ça c'est update_user";
             echo "ça c'est delete_user";
             var_dump($_POST); 
 
-
-           include '../inc/connectbdd.php';
+            include '../inc/connectbdd.php';
             $req = $pdo->prepare("DELETE FROM users WHERE id = ?");//prépare l'envois vers la BDD
             print_r($_POST);
             $req->execute(array($_POST['id']));/*envois vers BDD*/ 
 
             header('location: ../admin_users.php');/*redirection vers page des evenements*/
-}else{
+        }else{
          header('location: ../index.php');
      }
-?>
+     ?>
